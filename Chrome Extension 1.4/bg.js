@@ -15,7 +15,7 @@ chrome.contextMenus.create({
 	type: "checkbox",
 	title: 'Tag all new bookmarks with Tabbles',
 	contexts: ["browser_action"],
-	checked: true
+	checked: false
 });
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
 	if (info.menuItemId == 'isEnabledToggle') {
