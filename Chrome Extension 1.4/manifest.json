@@ -11,7 +11,7 @@
 	"background": {
 		"service_worker": "bg.js"
 	},
-	"browser_action": {
+	"action": {
 		"default_title": "Tabbles Chrome extension",
 		"default_icon": "icon128.png"
 	},
