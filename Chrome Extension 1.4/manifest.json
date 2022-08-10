@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "Tag bookmarks with Tabbles ",
-	"version": "1.5",
+	"version": "1.6",
 	"short_name": "Tabbles",
 	"author": "Tag Forge",
 	"homepage_url": "http://tabbles.net",

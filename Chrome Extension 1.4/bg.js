@@ -1,4 +1,10 @@
+// chrome.runtime.onInstalled.addListener(() => {
+  // //chrome.storage.sync.set({ color });
+  // // console.log('installed');
+// });
+
 chrome.action.onClicked.addListener(function (tab) {
+	// console.log('clicked');
 	runApp('0');
 });
 
@@ -26,20 +32,28 @@ chrome.storage.local.set({ 'isEnabled': true });
 
 // C:\Users\Main\Desktop\Программирование\UpworkExtension\c\Chrome Extension 1.31
 // C:\Users\Main\Desktop\Программирование\UpworkExtension\c\Chrome Extension 1.31.pem
-function runApp(n) {
+function runApp(n  /* 1 means addlistener, 0 means clicked*/ ) {
 	chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+		// console.log('d0');
 		if (tabs && tabs[0]) {
+			
+			// console.log('d1');
 			var tbblURL = 'tabbles:tag_url' + ';' + encodeURIComponent(tabs[0].title) + ';' + encodeURIComponent(tabs[0].url);
+			
+			console.log(tbblURL);
 			// n exists
 			if (n) {
+				// console.log('d2');
 				// chrome.browserAction.onClicked
 				if (n == '0') {
+					// console.log('d3');
 					chrome.tabs.update(null, { url: tbblURL });
 				}
 				// chrome.bookmarks.onCreated.addListener
 				if (n == '1') {
 					// new tab
 					// chrome.tabs.create({ url: 'chrome://newtab' });
+					// console.log('tabs update');
 					chrome.tabs.update(null, { url: tabs[0].url });
 					chrome.tabs.update(null, { url: tbblURL });					
 				}
