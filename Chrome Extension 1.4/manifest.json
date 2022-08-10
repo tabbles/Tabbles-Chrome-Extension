@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "Tag bookmarks with Tabbles ",
 	"version": "1.5",
 	"short_name": "Tabbles",
@@ -9,9 +9,7 @@
 		"128": "icon128.png"
 	},
 	"background": {
-		"scripts": [
-			"bg.js"
-		]
+		"service_worker": "bg.js"
 	},
 	"browser_action": {
 		"default_title": "Tabbles Chrome extension",
